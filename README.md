@@ -99,3 +99,7 @@ Depending on the machine type that you choose, the installation could take a few
 this in your Puppet Master instance console log at Google Developer Console.
 
     Cenas.
+
+Now you can **ssh** to your new created instance executing:
+
+    gcutil ssh puppet-master
