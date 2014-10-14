@@ -55,8 +55,8 @@ Then create a `device.conf` in your Puppet configuration path. To determine the 
 
     puppet apply --configprint deviceconfig
 
-This command should give an output like `/etc/puppet/device.conf` or `~/.puppet/device.conf`. Go to this directory and open the
-file `device.conf`, the file should look like this:
+This command should give an output like `/etc/puppet/device.conf` or `~/.puppet/device.conf`. Go to this directory and create the
+file `device.conf` by running `touch device.conf`, and then copy the following lines to the file:
 
     #/etc/puppet/device.conf
     [my_project]
@@ -84,7 +84,7 @@ Now we can create and start our Puppet Master executing the following command:
 Depending on the machine type that you choose, the installation could take a few minutes, if everything went fine you should see a message like
 this in your Puppet Master instance console log at Google Developer Console.
 
-    Cenas.
+    puppet-master startupscript: Puppet installation finished!
 
 Now you can **ssh** to your new created instance executing:
 
@@ -95,8 +95,8 @@ file run the following command:
 
     puppet apply --configprint deviceconfig
 
-This command should give an output like `/etc/puppet/device.conf` or `~/.puppet/device.conf`. Go to this directory and open the
-file `device.conf`, the file should look like this:
+This command should give an output like `/etc/puppet/device.conf` or `~/.puppet/device.conf`. Go to this directory and create the
+file `device.conf` by running `sudo touch device.conf`, and then copy the following lines to the file:
 
     #/etc/puppet/device.conf
       [my_project]

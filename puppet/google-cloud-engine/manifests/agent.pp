@@ -11,7 +11,7 @@ gce_instance { 'puppet-agent':
   startupscript  => 'pe-simplified-agent.sh',
   metadata       => {
     'pe_role'    => 'agent',
-    'pe_master'  => 'puppet-enterprise-master',
+    'pe_master'  => 'puppet-master',
     'pe_version' => '3.3.1',
   },
   tags           => ['puppet', 'pe-agent', 'http-server', 'https-server'],
