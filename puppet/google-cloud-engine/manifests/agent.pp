@@ -2,7 +2,7 @@
 # ------------------------------------
 # the puppet-agent instance
 # ------------------------------------
-gce_instance { 'puppet-agent':
+gce_instance { 'cot@agent1':
   ensure         => present,
   zone           => 'europe-west1-b',
   machine_type   => 'g1-small',
@@ -11,7 +11,7 @@ gce_instance { 'puppet-agent':
   startupscript  => 'pe-simplified-agent.sh',
   metadata       => {
     'pe_role'    => 'agent',
-    'pe_master'  => 'puppet-master',
+    'pe_master'  => 'master',
     'pe_version' => '3.3.1',
   },
   tags           => ['puppet', 'pe-agent', 'http-server', 'https-server'],

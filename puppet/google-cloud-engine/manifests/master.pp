@@ -2,7 +2,7 @@
 # -------------------------------------
 # the puppet-master instance
 # -------------------------------------
-gce_instance { 'puppet-master':
+gce_instance { 'cot@master':
   ensure                => present,
   description           => 'A Puppet Enterprise Master and Console',
   machine_type          => 'n1-standard-1',
@@ -14,11 +14,14 @@ gce_instance { 'puppet-master':
   metadata             => {
     'pe_role'          => 'master',
     'pe_version'       => '3.3.1',
-    'pe_consoleadmin'  => 'admin@example.com',
-    'pe_consolepwd'    => 'puppetize',
+    'pe_consoleadmin'  => 'admin@cot.com',
+    'pe_consolepwd'    => 'cloud-of-things',
   },
   module_repos         => {
       'gce_compute'    => 'git://github.com/puppetlabs/puppetlabs-gce_compute',
+      'java'           => 'git://github.com/puppetlabs/puppetlabs-java',
+      'tomcat'         => 'git://github.com/puppetlabs/puppetlabs-tomcat'
+      'mysql'          => 'git://github.com/puppetlabs/puppetlabs-mysql'
   },
   service_account_scopes => ['compute-ro'],
 }
