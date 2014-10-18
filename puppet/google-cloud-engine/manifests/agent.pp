@@ -2,7 +2,7 @@
 # ------------------------------------
 # the puppet-agent instance
 # ------------------------------------
-gce_instance { 'cot@agent1':
+gce_instance { 'agent':
   ensure         => present,
   zone           => 'europe-west1-b',
   machine_type   => 'g1-small',

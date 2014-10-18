@@ -2,7 +2,7 @@
 # -------------------------------------
 # the puppet-master instance
 # -------------------------------------
-gce_instance { 'cot@master':
+gce_instance { 'master':
   ensure                => present,
   description           => 'A Puppet Enterprise Master and Console',
   machine_type          => 'n1-standard-1',
@@ -20,8 +20,8 @@ gce_instance { 'cot@master':
   module_repos         => {
       'gce_compute'    => 'git://github.com/puppetlabs/puppetlabs-gce_compute',
       'java'           => 'git://github.com/puppetlabs/puppetlabs-java',
-      'tomcat'         => 'git://github.com/puppetlabs/puppetlabs-tomcat'
-      'mysql'          => 'git://github.com/puppetlabs/puppetlabs-mysql'
+      'tomcat'         => 'git://github.com/puppetlabs/puppetlabs-tomcat',
+      'mysql'          => 'git://github.com/puppetlabs/puppetlabs-mysql',
   },
   service_account_scopes => ['compute-ro'],
 }

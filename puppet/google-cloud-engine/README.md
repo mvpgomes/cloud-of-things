@@ -56,7 +56,7 @@ Then create a `device.conf` in your Puppet configuration path. To determine the 
     puppet apply --configprint deviceconfig
 
 This command should give an output like `/etc/puppet/device.conf` or `~/.puppet/device.conf`. Go to this directory and create the
-file `device.conf` by running `touch device.conf`, and then copy the following lines to the file:
+file `device.conf` by running `touch device.conf`, open the file in an editor and then copy the following lines to the file:
 
     #/etc/puppet/device.conf
     [my_project]
@@ -90,13 +90,18 @@ Now you can **ssh** to your new created instance executing:
 
     gcutil ssh puppet-master
 
+This step is recommended for Mac OS X users, if you are using another OS you can skip. In the Puppet Enterprise, the files are placed in a different
+location then a normal Puppet installation. To place the files in the "normal" place we will create a symlink by executing:
+
+    sudo ln -s /etc/puppetlabs/puppet /etc/puppet
+
 To be able to deploy the Puppet Agent you need to create a `device.conf` in your Puppet Master configuration path. To determine the location of the
 file run the following command:
 
-    puppet apply --configprint deviceconfig
+    sudo puppet apply --configprint deviceconfig
 
 This command should give an output like `/etc/puppet/device.conf` or `~/.puppet/device.conf`. Go to this directory and create the
-file `device.conf` by running `sudo touch device.conf`, and then copy the following lines to the file:
+file `device.conf` by running `sudo touch device.conf`, and then open the file in an editor and copy the following lines to the file:
 
     #/etc/puppet/device.conf
       [my_project]
@@ -107,11 +112,6 @@ In the section header `my_project` you can choose any name associated with your 
 will be used in the future to select the right project when connecting to GCE.
 
 Within the element url just change `project_id` to your Project ID that is assigned to your GCE project.
-
-This step is recommended for Mac OS X users, if you are using another OS you can skip. In the Puppet Enterprise, the files are placed in a different
-location then a normal Puppet installation. To place the files in the "normal" place we will create a symlink by executing:
-
-    sudo ln -s /etc/puppetlabs/puppet /etc/puppet
 
 ###Puppet Agent
 After you **ssh** to your Puppet Master, you need to grant access to the Google Coud, in order to have access to the GCE API. You can do that by
