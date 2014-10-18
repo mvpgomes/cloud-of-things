@@ -2,7 +2,7 @@
 # -------------------------------------
 # the puppet-master instance
 # -------------------------------------
-gce_instance { 'master':
+gce_instance { 'cotmaster':
   ensure                => present,
   description           => 'A Puppet Enterprise Master and Console',
   machine_type          => 'n1-standard-1',
@@ -15,8 +15,9 @@ gce_instance { 'master':
     'pe_role'          => 'master',
     'pe_version'       => '3.3.1',
     'pe_consoleadmin'  => 'admin@cot.com',
-    'pe_consolepwd'    => 'cloud-of-things',
+    'pe_consolepwd'    => 'puppetize',
   },
+  modules               => ['puppetlabs-stdlib', 'puppetlabs-apt'],
   module_repos         => {
       'gce_compute'    => 'git://github.com/puppetlabs/puppetlabs-gce_compute',
       'java'           => 'git://github.com/puppetlabs/puppetlabs-java',
