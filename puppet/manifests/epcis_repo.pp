@@ -4,7 +4,7 @@ class epcis_repo {
   # download the epcis repository
   exec { 'epcis-download':
     command => 'wget https://oss.sonatype.org/content/repositories/public/org/fosstrak/epcis/epcis-repository/0.5.0/epcis-repository-0.5.0-bin-with-dependencies.zip -O /tmp/epcis.zip',
-    unless  => 'which epcis-repositry-0.5.0',
+    unless  => '[ -d /tmp/epcis-repository-0.5.0 ]',
     path    => ['/bin', '/usr/bin'],
     notify  => Exec['epcis-unpack'],
   }
