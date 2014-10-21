@@ -7,7 +7,7 @@ gce_instance { 'cotagent':
   zone           => 'europe-west1-b',
   machine_type   => 'g1-small',
   network        => 'default',
-  image          => 'projects/debian-cloud/global/images/debian-7-wheezy-v20141017',
+  image          => 'projects/debian-cloud/global/images/backports-debian-7-wheezy-v20141017',
   startupscript  => 'pe-simplified-agent.sh',
   metadata       => {
     'pe_role'    => 'agent',

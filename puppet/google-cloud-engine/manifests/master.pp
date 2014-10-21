@@ -17,12 +17,12 @@ gce_instance { 'cotmaster':
     'pe_consoleadmin'  => 'admin@cot.com',
     'pe_consolepwd'    => 'puppetize',
   },
-  modules               => ['puppetlabs-stdlib', 'puppetlabs-apt'],
   module_repos         => {
       'gce_compute'    => 'git://github.com/puppetlabs/puppetlabs-gce_compute',
       'java'           => 'git://github.com/puppetlabs/puppetlabs-java',
       'tomcat'         => 'git://github.com/puppetlabs/puppetlabs-tomcat',
       'mysql'          => 'git://github.com/puppetlabs/puppetlabs-mysql',
+      'epel'           => 'git://github.com/stahnma/puppet-module-epel'
   },
   service_account_scopes => ['compute-ro'],
 }
