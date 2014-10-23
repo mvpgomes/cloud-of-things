@@ -1,4 +1,5 @@
 class web {
+  # install and deploy the apache-tomcat service
   class { 'java': }
   class { 'tomcat': }
   class { 'epel': }->

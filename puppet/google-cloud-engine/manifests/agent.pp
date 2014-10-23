@@ -24,6 +24,13 @@ gce_firewall { 'allow-http':
   allowed     => 'tcp:80'
 }
 
+gce_firewall { 'allow-tomcat':
+  ensure      => present,
+  network     => 'default',
+  description => 'Allow apache-tomcat web server.',
+  allowed     => 'tcp:8080'
+}
+
 gce_httphealthcheck { 'basic-http':
   ensure  => present,
   require => Gce_instance['cotagent'],
