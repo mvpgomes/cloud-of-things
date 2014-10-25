@@ -1,6 +1,6 @@
 class epcis_repo {
   # before perform the epcis repository setup the apache-tomcat module is required
-  require web
+  require web  
   # download the epcis repository
   exec { 'epcis-download':
     command => 'wget https://oss.sonatype.org/content/repositories/public/org/fosstrak/epcis/epcis-repository/0.5.0/epcis-repository-0.5.0-bin-with-dependencies.zip -O /tmp/epcis.zip',

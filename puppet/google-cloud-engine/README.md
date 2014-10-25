@@ -113,6 +113,9 @@ will be used in the future to select the right project when connecting to GCE.
 
 Within the element url just change `project_id` to your Project ID that is assigned to your GCE project.
 
+##Copy the manifests
+  
+
 ###Puppet Agent
 After you **ssh** to your Puppet Master, you need to grant access to the Google Coud, in order to have access to the GCE API. You can do that by
 executing the following command:

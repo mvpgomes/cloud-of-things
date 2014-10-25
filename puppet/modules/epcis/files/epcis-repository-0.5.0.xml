@@ -1,9 +1,11 @@
-<Resource
+<Context>
+  <Resource
     name="jdbc/EPCISDB"
     type="javax.sql.DataSource"
     auth="Container"
-    username="epcis"
+    username="epcis@localhost"
     password="epcis"
     driverClassName="com.mysql.jdbc.Driver"
     url="jdbc:mysql://localhost:3306/epcis?autoReconnect=true">
-</Resource>
+  </Resource>
+</Context>
