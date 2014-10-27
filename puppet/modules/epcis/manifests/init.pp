@@ -23,11 +23,4 @@ class epcis {
     path    => ['/bin', '/usr/bin'],
     require => Exec['epcis-unpack'],
   }
-  # configure the the repository to connect with the database
-  file { '/etc/tomcat7/Catalina/localhost/epcis-repository-0.5.0.xml':
-    mode => "0644",
-    owner => 'root',
-    group => 'root',
-    source => 'puppet:///modules/epcis/epcis-repository-0.5.0.xml',
-  }
 }

@@ -3,7 +3,7 @@
     name="jdbc/EPCISDB"
     type="javax.sql.DataSource"
     auth="Container"
-    username="epcis@localhost"
+    username="epcis"
     password="epcis"
     driverClassName="com.mysql.jdbc.Driver"
     url="jdbc:mysql://localhost:3306/epcis?autoReconnect=true">

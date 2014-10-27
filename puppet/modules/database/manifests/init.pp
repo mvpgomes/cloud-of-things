@@ -1,7 +1,7 @@
 # define the variables for the url's and resources !!!
 class database {
   require web
-  require epcis_repo
+  require epcis
   # install mysql-connectorJ
   exec { 'connectorj-download':
     command => 'wget http://repo1.maven.org/maven2/mysql/mysql-connector-java/5.1.33/mysql-connector-java-5.1.33.jar -O /tmp/mysql-connector-java-5.1.33.jar',
@@ -36,4 +36,10 @@ class database {
     ensure => present,
     source => "/tmp/epcis-repository-0.5.0/epcis_schema.sql",
   }
+  # configure the the repository to connect with the database
+  file { '/var/lib/tomcat7/conf/Catalina/localhost/epcis-repository-0.5.0.xml':
+    ensure => present,
+    source => 'puppet:///modules/epcis/epcis-repository-0.5.0.xml',
+  }
+  # restart tomcat web server
 }
